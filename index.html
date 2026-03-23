@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripenol™ — Precision Ripening Concentrate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ── Arabic Font CSS Rule ── */
+        [lang="ar"] body {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        [lang="ar"] h1,
+        [lang="ar"] h2,
+        [lang="ar"] h3,
+        [lang="ar"] .hero-h,
+        [lang="ar"] .sec-h,
+        [lang="ar"] .sc-h,
+        [lang="ar"] .cr-h,
+        [lang="ar"] .hs-v,
+        [lang="ar"] .n-logo,
+        [lang="ar"] .sct-h,
+        [lang="ar"] .cf-success-h,
+        [lang="ar"] .footer-logo {
+            font-family: 'Noto Naskh Arabic', serif;
+            letter-spacing: 0;
+        }
+
+        [lang="ar"] .hero-kicker,
+        [lang="ar"] .sec-tag,
+        [lang="ar"] .box-title,
+        [lang="ar"] .stat-lbl,
+        [lang="ar"] .hs-l,
+        [lang="ar"] .bl,
+        [lang="ar"] .comp-label,
+        [lang="ar"] .cf-tag,
+        [lang="ar"] .footer-col-h,
+        [lang="ar"] .sct-tag,
+        [lang="ar"] .ob-text {
+            font-family: 'Noto Naskh Arabic', serif;
+            letter-spacing: 0;
+        }
+
+        /* ── Language Toggle ── */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: 1px solid var(--line2);
+            padding: 5px 12px;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: border-color .2s;
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--line3);
+        }
+
+        .lt-en,
+        .lt-ar {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: .12em;
+            color: var(--ink);
+            transition: color .2s;
+        }
+
+        .lt-sep {
+            font-size: 10px;
+            color: var(--line3);
+        }
+
+        [lang="en"] .lt-en {
+            color: var(--green2);
+        }
+
+        [lang="en"] .lt-ar {
+            color: var(--ink);
+        }
+
+        [lang="ar"] .lt-ar {
+            color: var(--green2);
+        }
+
+        [lang="ar"] .lt-en {
+            color: var(--ink);
+        }
+        /* ── RTL Alignments ── */
+        [dir="rtl"] .hero-text {
+            padding-right: 0;
+            padding-left: 48px;
+        }
+        [dir="rtl"] .hero-kicker,
+        [dir="rtl"] .sec-tag,
+        [dir="rtl"] .btn-ghost,
+        [dir="rtl"] .step-row {
+            direction: rtl;
+        }
+        [dir="rtl"] .hs {
+            border-right: none;
+            border-left: 1px solid var(--line);
+        }
+        [dir="rtl"] .hs:last-child {
+            border-left: none;
+        }
+        [dir="rtl"] .bf {
+            float: right;
+            transform-origin: right;
+        }
+        [dir="rtl"] .bt {
+            direction: ltr; /* keep chart bars flowing same way or flip? keep it simple */
+            transform: scaleX(-1);
+        }
+        [dir="rtl"] .sct-det::before {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+        [dir="rtl"] .cr-h, [dir="rtl"] .cr-v {
+            text-align: right;
+        }
+        [dir="rtl"] .n-cta, [dir="rtl"] .btn-fill {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════
+       NAV
+  ═══════════════════════════════ -->
+    <nav id="nav">
+        <a href="#" class="n-logo logo-treatment">
+            <span class="logo-main">RIPENOL<sup>™</sup></span>
+            <span class="logo-sub">Ripening Concentrate</span>
+        </a>
+
+        <div class="n-links">
+            <a href="#purity">Purity</a>
+            <a href="#performance">Performance</a>
+            <a href="#supply">Supply</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="n-right">
+            <!-- Language toggle -->
+            <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                <span class="lt-en">EN</span>
+                <span class="lt-sep">|</span>
+                <span class="lt-ar">AR</span>
+            </button>
+            <!-- Day / Night pill switch -->
+            <button class="theme-switch" id="theme-switch" aria-label="Toggle theme">
+                <span class="ts-track">
+                    <span class="ts-thumb"></span>
+                </span>
+                <span class="ts-label ts-day">Day</span>
+                <span class="ts-label ts-night">Night</span>
+            </button>
+
+            <a href="#contact" class="n-cta">Get In Touch</a>
+            <button class="n-ham" id="n-ham" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div id="mob-overlay"></div>
+    <div id="mob-drawer">
+        <button class="drawer-x" id="drawer-x">&times;</button>
+        <a href="#purity" class="drawer-a">Purity</a>
+        <a href="#performance" class="drawer-a">Performance</a>
+        <a href="#supply" class="drawer-a">Supply</a>
+        <a href="#contact" class="drawer-a">Contact</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════
+       HERO
+  ═══════════════════════════════ -->
+    <section id="hero">
+
+        <!-- Left: copy -->
+        <div class="hero-text">
+            <div class="hero-kicker fi">Precision Ripening Concentrate · Made in Oman</div>
+            <h1 class="hero-h fi d1">
+                The Purest<br>
+                Fuel for<br>
+                <em>Precision</em><br>
+                Ripening.
+            </h1>
+            <p class="hero-p fi d2">
+                Ripenol™ delivers <strong>90% active ethanol</strong> engineered for
+                clean, residue-free conversion into ethylene gas —
+                zero harmful byproducts, every batch.
+            </p>
+            <div class="hero-cta fi d3">
+                <a href="#contact" class="btn-fill">Secure Supply →</a>
+                <button class="btn-ghost" data-scroll-to="purity">Learn more</button>
+            </div>
+            <div class="hero-stats fi d4">
+                <div class="hs">
+                    <div class="hs-v">90<sup>%</sup></div>
+                    <div class="hs-l">Ethanol Active</div>
+                </div>
+                <div class="hs">
+                    <div class="hs-v">0.314<sup>m³</sup></div>
+                    <div class="hs-l">Ethylene / Litre</div>
+                </div>
+                <div class="hs">
+                    <div class="hs-v">0</div>
+                    <div class="hs-l">Byproducts</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: 3D bottle -->
+        <div class="hero-bottle">
+            <div class="bottle-glow"></div>
+            <canvas id="bottle-canvas"></canvas>
+
+            <div class="spec-chips">
+                <div class="sc-chip left chip-a">
+                    <div class="sv">90<sup>%</sup></div>
+                    <div class="sl">Ethanol</div>
+                </div>
+                <div class="sc-chip right chip-b">
+                    <div class="sv">0.314<sup>m³</sup></div>
+                    <div class="sl">Per Litre</div>
+                </div>
+                <div class="sc-chip right chip-c">
+                    <div class="sv">1L</div>
+                    <div class="sl">Per Bottle</div>
+                </div>
+            </div>
+
+            <div class="oman-badge">
+                <div class="ob-dot"></div>
+                <div class="ob-text">Made in Oman</div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="hdiv"></div>
+
+
+    <!-- ═══════════════════════════════
+       PURITY
+  ═══════════════════════════════ -->
+    <section class="sec" id="purity">
+        <div class="sec-inner">
+            <div class="sec-tag fi">01 — Purity &amp; Safety</div>
+            <h2 class="sec-h fi d1">Uncompromising <em>Purity.</em><br>Unwavering Safety.</h2>
+            <p class="sec-p fi d2">
+                Not all ripening concentrates are equal. Ripenol™ is meticulously
+                formulated for precise, clean conversion — safeguarding your
+                produce and your operations.
+            </p>
+
+            <div class="purity-cols fi d2">
+                <div class="p-col">
+                    <div class="p-col-tag ok">✓ Ripenol™ — Pure Conversion</div>
+                    <div class="p-vis"><span>🍌</span></div>
+                    <div class="p-col-h">Clean. Safe. Precise.</div>
+                    <p class="p-col-p">
+                        Specially formulated ethanol converts cleanly into ethylene gas.
+                        No harmful residues, no chamber contamination, no byproducts.
+                        Your produce and your people are protected at every cycle.
+                    </p>
+                </div>
+                <div class="p-col">
+                    <div class="p-col-tag fail">✗ Unauthorized Liquids</div>
+                    <div class="p-vis fail"><span>🍌</span></div>
+                    <div class="p-col-h">Risk to Produce &amp; Equipment.</div>
+                    <p class="p-col-p">
+                        May damage the generator and produce harmful byproducts which
+                        compromise your produce and operations. The cost of the wrong
+                        concentrate is always far greater than any perceived savings.
+                    </p>
+                </div>
+                <div class="p-warn">
+                    <div class="p-warn-label">⚠ Warning</div>
+                    <p class="p-warn-text">
+                        Not for human consumption. Keep out of reach of children.
+                        Use of any other liquid <strong>may damage the generator</strong>
+                        and <strong>may produce harmful byproducts</strong> affecting the
+                        produce. For professional agricultural use only.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════
+       STATS STRIP
+  ═══════════════════════════════ -->
+    <div id="stats">
+        <div class="stats-grid">
+            <div class="stat-item fi">
+                <div class="stat-num">90<sup>%</sup></div>
+                <div class="stat-lbl">Active Ethanol</div>
+            </div>
+            <div class="stat-item fi d1">
+                <div class="stat-num">0.314<sup>m³</sup></div>
+                <div class="stat-lbl">Ethylene Per Litre</div>
+            </div>
+            <div class="stat-item fi d2">
+                <div class="stat-num">2,093<sup>m³</sup></div>
+                <div class="stat-lbl">Room @ 150ppm</div>
+            </div>
+            <div class="stat-item fi d3">
+                <div class="stat-num">0</div>
+                <div class="stat-lbl">Harmful Byproducts</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════
+       PERFORMANCE
+  ═══════════════════════════════ -->
+    <section class="sec" id="performance">
+        <div class="sec-inner">
+            <div class="sec-tag fi">02 — Proven Performance</div>
+            <h2 class="sec-h fi d1">Superior Yield.<br><em>Certified Quality.</em></h2>
+            <p class="sec-p fi d2">
+                Maximize ROI. One litre converts into 0.314 m³ of pure ethylene —
+                sufficient to ripen several loads per cycle.
+            </p>
+
+            <div class="perf-layout">
+                <div>
+                    <div class="box fi d1">
+                        <div class="box-title">Ethylene Output Comparison</div>
+                        <p class="box-sub">Ripenol™ vs generic concentrates — per litre ethylene yield.</p>
+                        <div class="brow">
+                            <div class="bl">Generic</div>
+                            <div class="bt">
+                                <div class="bf gen" id="bar-gen"></div>
+                            </div>
+                            <div class="bv">Low</div>
+                        </div>
+                        <div class="brow">
+                            <div class="bl">Ripenol™</div>
+                            <div class="bt">
+                                <div class="bf rip" id="bar-rip"></div>
+                            </div>
+                            <div class="bv">0.314m³</div>
+                        </div>
+                        <div class="bar-eq">0.314 m³ × 1,000,000 ÷ 150ppm = 2,093 m³ room</div>
+                    </div>
+
+                    <div class="box fi d2" id="comp-box">
+                        <div class="comp-row">
+                            <span class="comp-label">Active Ingredient: Ethanol</span>
+                            <span class="comp-val hl">90.00%</span>
+                        </div>
+                        <div class="comp-row">
+                            <span class="comp-label">Other Ingredients</span>
+                            <span class="comp-val">10.00%</span>
+                        </div>
+                        <div class="comp-row">
+                            <span class="comp-label">Total (1000ml)</span>
+                            <span class="comp-val">100.00%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="box fi d1">
+                        <div class="fruits-tag">Versatile Application — Climacteric Fruits</div>
+                        <div class="fpills">
+                            <div class="fp">🍌 Bananas</div>
+                            <div class="fp">🥭 Mango</div>
+                            <div class="fp">🥑 Avocados</div>
+                            <div class="fp">🍊 Citrus Fruit</div>
+                            <div class="fp">🍈 Melons</div>
+                            <div class="fp">🧡 Papayas</div>
+                            <div class="fp">🍐 Pears</div>
+                            <div class="fp">🍅 Tomatoes</div>
+                            <div class="fp">🌿 Tobacco</div>
+                        </div>
+                    </div>
+
+                    <div class="box fi d2" id="steps-box">
+                        <div class="steps-tag">Three Steps to Perfect Ripening</div>
+                        <div class="step-row">
+                            <div class="step-n">01</div>
+                            <div>
+                                <div class="step-h">Pour Ripenol™</div>
+                                <p class="step-p">Fill the Safe-Ripe™ generator with the correct volume for your room
+                                    size.</p>
+                            </div>
+                        </div>
+                        <div class="step-row">
+                            <div class="step-n">02</div>
+                            <div>
+                                <div class="step-h">Generator Converts</div>
+                                <p class="step-p">Catalytic conversion into pure ethylene at controlled 150ppm — clean
+                                    and safe.</p>
+                            </div>
+                        </div>
+                        <div class="step-row">
+                            <div class="step-n">03</div>
+                            <div>
+                                <div class="step-h">Uniform Ripening</div>
+                                <p class="step-p">Consistent, predictable results with zero residue on produce or in the
+                                    chamber.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="hdiv"></div>
+
+
+    <!-- ═══════════════════════════════
+       SUPPLY
+  ═══════════════════════════════ -->
+    <section class="sec sec-surface" id="supply">
+        <div class="sec-inner">
+            <div class="sec-tag fi">03 — Global Distribution</div>
+            <h2 class="sec-h fi d1">Seamless Global Supply.<br><em>Integrated Excellence.</em></h2>
+            <p class="sec-p fi d2">
+                Available direct through Al Awalawya Global Trading LLC and via
+                our expanding worldwide distributor network.
+            </p>
+
+            <div class="supply-cards fi d2">
+                <div class="sc">
+                    <span class="sc-i">🌐</span>
+                    <div class="sc-h">Secure Your Supply</div>
+                    <p class="sc-p">Purchase directly or through our expanding worldwide distributor network for
+                        reliable, consistent supply.</p>
+                </div>
+                <div class="sc">
+                    <span class="sc-i">📦</span>
+                    <div class="sc-h">Efficient Logistics</div>
+                    <p class="sc-p">Non-pressurized liquid concentrate simplifies international shipping — no hazardous
+                        freight complications.</p>
+                </div>
+                <div class="sc">
+                    <span class="sc-i">♻️</span>
+                    <div class="sc-h">Responsible Disposal</div>
+                    <p class="sc-p">Triple rinse containers before recycling or disposal. Refer to MSDS for complete
+                        handling instructions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="supply-cta fi">
+            <div class="supply-cta-inner">
+                <div>
+                    <span class="sct-tag">Secure your export supply today</span>
+                    <h3 class="sct-h">Contact us for bulk export pricing<br><em>and partnership opportunities.</em></h3>
+                    <div class="sct-dets">
+                        <div class="sct-det">AL AWALAWYA GLOBAL TRADING LLC — Made in Oman</div>
+                        <div class="sct-det">Plot 187, Industrial Zone, Barka Sanaya Phase 2, Al Batinah South</div>
+                        <div class="sct-det">+968 9668 7703 · helpdesk@ripenol.com · www.ripenol.com</div>
+                    </div>
+                </div>
+                <div class="sct-badge">
+                    <div class="sct-badge-logo">Ripenol<sup>™</sup></div>
+                    <div class="sct-badge-sub">Made in Oman</div>
+                    <div class="sct-badge-stamp">OMAN CERTIFIED</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════
+       CONTACT
+  ═══════════════════════════════ -->
+    <section class="sec" id="contact">
+        <div class="sec-inner">
+            <div class="sec-tag fi">04 — Get In Touch</div>
+            <h2 class="sec-h fi d1">Reach Us.<br><em>Grow Together.</em></h2>
+            <p class="sec-p fi d2">
+                Bulk export pricing, distributor partnerships, or product information —
+                our team responds within 1–2 business days.
+            </p>
+
+            <div class="contact-layout">
+
+                <!-- Details + map -->
+                <div class="fi d1">
+                    <div class="c-rows">
+                        <div class="cr">
+                            <div class="cr-n">01</div>
+                            <div>
+                                <div class="cr-h">Phone</div>
+                                <div class="cr-v">+968 9668 7703</div>
+                                <button class="copy-btn" id="copy-btn">Copy Number</button>
+                            </div>
+                        </div>
+                        <div class="cr">
+                            <div class="cr-n">02</div>
+                            <div>
+                                <div class="cr-h">Email</div>
+                                <div class="cr-v">helpdesk@ripenol.com</div>
+                            </div>
+                        </div>
+                        <div class="cr">
+                            <div class="cr-n">03</div>
+                            <div>
+                                <div class="cr-h">Address</div>
+                                <div class="cr-v">
+                                    Plot 187, Industrial Zone<br>
+                                    Barka Sanaya Phase 2<br>
+                                    Al Batinah South, Oman
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cr">
+                            <div class="cr-n">04</div>
+                            <div>
+                                <div class="cr-h">Company</div>
+                                <div class="cr-v" style="margin-top: 6px;">
+                                    <div class="al-logo">Al Awalawya Global Trading LLC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cmap">
+                        <iframe src="https://maps.google.com/maps?q=23.6878,57.8653&z=10&output=embed" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=23.6878,57.8653" class="cmap-link" target="_blank"
+                        rel="noopener">
+                        ↗ Open in Google Maps
+                    </a>
+                </div>
+
+                <!-- Form -->
+                <div class="fi d2">
+                    <div id="cf-wrap">
+                        <span class="cf-tag">Send an Enquiry</span>
+                        <div class="cf-row">
+                            <div class="cf-ff">
+                                <label class="cf-lbl">Full Name</label>
+                                <input class="cf-inp" id="cf-name" type="text" placeholder="Your name" required>
+                            </div>
+                            <div class="cf-ff">
+                                <label class="cf-lbl">Company</label>
+                                <input class="cf-inp" type="text" placeholder="Organisation">
+                            </div>
+                        </div>
+                        <div class="cf-row">
+                            <div class="cf-ff">
+                                <label class="cf-lbl">Email Address</label>
+                                <input class="cf-inp" id="cf-email" type="email" placeholder="you@company.com" required>
+                            </div>
+                            <div class="cf-ff">
+                                <label class="cf-lbl">Country</label>
+                                <input class="cf-inp" type="text" placeholder="Origin country">
+                            </div>
+                        </div>
+                        <div class="cf-row">
+                            <div class="cf-ff full">
+                                <label class="cf-lbl">Message</label>
+                                <textarea class="cf-inp cf-ta" id="cf-msg"
+                                    placeholder="Bulk pricing enquiry, distributor partnership…" required></textarea>
+                            </div>
+                        </div>
+                        <div class="cf-foot">
+                            <span class="cf-note">Responses within 1–2 business days</span>
+                            <button class="cf-submit" id="cf-submit">Send Enquiry →</button>
+                        </div>
+                    </div>
+
+                    <div class="cf-success" id="cf-success">
+                        <div class="cf-success-icon">✓</div>
+                        <div class="cf-success-h">Enquiry Sent</div>
+                        <p class="cf-success-p">We'll be in touch within 1–2 business days.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════
+       TRUST / RESOURCES
+  ═══════════════════════════════ -->
+    <section class="sec sec-dark" id="trust">
+        <div class="sec-inner">
+            <div class="trust-layout">
+                <div class="trust-left fi">
+                    <div class="sec-tag">Resources</div>
+                    <h2 class="sec-h"><em>Download Resources.</em></h2>
+                    <p class="sec-p">Full product brochure for your operations team,
+                        procurement, or compliance review.</p>
+                    <div class="trust-btns">
+                        <a href="Brochure_EN.pdf" class="btn-fill-light" target="_blank">Download Brochure (English)</a>
+                        <a href="Brochure_AR.pdf" class="btn-outline-light" target="_blank" lang="ar" style="font-family: 'Noto Naskh Arabic', serif; letter-spacing: 0;">تحميل الكتيب (Arabic)</a>
+                    </div>
+                </div>
+
+                <div class="fi d1">
+                    <div class="trust-grid">
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Made in Oman</div>
+                        </div>
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Zero Harmful Byproducts</div>
+                        </div>
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Global Safety Standards</div>
+                        </div>
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Worldwide Distribution</div>
+                        </div>
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Safe-Ripe™ Compatible</div>
+                        </div>
+                        <div class="ti">
+                            <div class="ti-check">✓</div>
+                            <div class="ti-text">Residue-Free Conversion</div>
+                        </div>
+                    </div>
+                    <div class="trust-warn">
+                        <div class="tw-label">⚠ Flammable / Harmful</div>
+                        <p class="tw-text">Contains Denatured Ethanol. Regulated by International and
+                            Local Guidelines. Keep away from ignition sources.
+                            For professional agricultural use only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════
+       FOOTER
+  ═══════════════════════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <a href="#" class="footer-logo logo-treatment">
+                        <span class="logo-main">RIPENOL<sup>™</sup></span>
+                        <span class="logo-sub">Ripening Concentrate</span>
+                    </a>
+                    <div class="footer-tagline">Pure Ethylene Conversion</div>
+                    <div class="al-logo" style="margin-top: 24px;">Al Awalawya Global Trading LLC</div>
+                    <div class="oman-badge static" style="display:inline-flex; position:relative; bottom:auto; right:auto; margin-top:20px; border-color: rgba(255,255,255,0.1); background: rgba(0,0,0,0.2);">
+                        <div class="ob-dot"></div>
+                        <div class="ob-text">Made in Oman</div>
+                    </div>
+                </div>
+                <div class="footer-cols">
+                    <div>
+                        <div class="footer-col-h">Navigate</div>
+                        <div class="footer-col-links">
+                            <a href="#purity">Purity &amp; Safety</a>
+                            <a href="#performance">Performance</a>
+                            <a href="#supply">Global Supply</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-col-h">Contact</div>
+                        <div class="footer-col-links">
+                            <a href="tel:+96896687703">+968 9668 7703</a>
+                            <a href="mailto:helpdesk@ripenol.com">helpdesk@ripenol.com</a>
+                            <a href="http://www.ripenol.com" target="_blank" rel="noopener">www.ripenol.com</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="footer-col-h">Address</div>
+                        <div class="footer-col-links">
+                            <a href="#">Plot 187, Industrial Zone</a>
+                            <a href="#">Barka Sanaya Phase 2</a>
+                            <a href="#">Al Batinah South, Oman</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2026 Al Awalawya Global Trading LLC. All rights reserved.</div>
+                <a href="#" class="footer-credit">Built by Pixelistan</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Site logic -->
+    <script src="main.js"></script>
+
+    <script>
+        'use strict';
+        /* ═══════════════════════════════════════════════
+           LANGUAGE SYSTEM
+           EN / AR toggle — text swap only, layout stays LTR
+        ═══════════════════════════════════════════════ */
+        var TRANSLATIONS = {
+            en: {
+                /* NAV */
+                'nav-purity': 'Purity',
+                'nav-performance': 'Performance',
+                'nav-supply': 'Supply',
+                'nav-contact': 'Contact',
+                'nav-cta': 'Get In Touch',
+
+                /* HERO */
+                'hero-eyebrow': 'Made in Oman · Est. 2024',
+                'hero-title': 'The Purest<br />Fuel for<br /><em>Precision</em><br />Ripening.',
+                'hero-desc': 'Ripenol™ is a <strong>90% active ethanol</strong> ripening concentrate engineered for clean, residue-free ethylene conversion — zero harmful byproducts, every batch.',
+                'hero-btn-primary': 'Secure Your Supply →',
+                'hero-btn-text': 'How it works ↓',
+                'hb-lbl-1': 'Ethanol Active',
+                'hb-lbl-2': 'Ethylene / Litre',
+                'hb-lbl-3': 'Byproducts',
+
+                /* NUMBERS BAND */
+                'nb-lbl-1': 'Active Ethanol Content',
+                'nb-lbl-2': 'Pure Ethylene Per Litre',
+                'nb-lbl-3': 'Room Coverage @ 150ppm',
+                'nb-lbl-4': 'Harmful Byproducts',
+
+                /* PURITY */
+                'purity-tag': '01 — Purity & Safety',
+                'purity-title': 'Uncompromising <em>Purity.</em><br />Unwavering Safety.',
+                'purity-desc': 'Not all ripening concentrates are equal. Ripenol™ is meticulously formulated for precise, clean conversion — safeguarding your produce and your operations.',
+                'good-badge': '✓ Ripenol™',
+                'good-h': 'Pure Conversion',
+                'good-p': 'Specially formulated ethanol converts cleanly into ethylene gas. No residues, no contamination, no byproducts. Your produce and your people are protected at every cycle.',
+                'good-pill': 'Clean & Safe',
+                'bad-badge': '✗ Unauthorized Liquids',
+                'bad-h': 'Harmful Byproducts',
+                'bad-p': 'May damage your generator and produce toxic byproducts that compromise your produce and operations. The cost is always greater than any perceived savings.',
+                'bad-pill': 'Risk to Produce',
+                'comp-tag': 'Product Composition — 1000ml',
+                'comp-1-name': 'Active Ingredient: Ethanol',
+                'comp-2-name': 'Other Ingredients',
+                'comp-3-name': 'Total (1000ml)',
+                'warning-text': 'Not for human consumption. Keep out of reach of children. Use of any other liquid <strong>may damage the generator</strong> and <strong>may produce harmful byproducts</strong> affecting the produce. For professional agricultural use only.',
+
+                /* PERFORMANCE */
+                'perf-tag': '02 — Proven Performance',
+                'perf-title': 'Superior Yield.<br /><em>Certified Quality.</em>',
+                'perf-desc': 'Maximize ROI. One litre converts into 0.314 m³ of pure ethylene — sufficient to ripen several loads per cycle.',
+                'bar-tag': 'Ethylene Output Comparison',
+                'bar-title': 'Ripenol™ vs Generic Concentrates',
+                'bar-desc': 'Per litre ethylene yield — measured output at 150ppm.',
+                'bar-lbl-gen': 'Generic',
+                'bar-lbl-rip': 'Ripenol™',
+                'bar-val-gen': 'Low',
+                'formula': '0.314 m³ × 1,000,000 ÷ 150ppm = <strong>2,093 m³ room</strong>',
+                'sq-lbl-1': 'Pure Ethylene / Litre',
+                'sq-lbl-2': 'Room @ 150ppm',
+                'sq-lbl-3': 'Equivalent Volume',
+                'sq-lbl-4': 'Cost Per Cycle',
+                'fruits-tag': 'Versatile Application',
+                'fruits-title': 'Climacteric Fruit & Crops',
+                'steps-tag': 'How To Use',
+                'steps-title': 'Three Steps to Perfect Ripening',
+                'step-1-h': 'Pour Ripenol™',
+                'step-1-p': 'Fill the Safe-Ripe™ generator with the correct volume for your room size.',
+                'step-2-h': 'Generator Converts',
+                'step-2-p': 'Catalytic conversion into pure ethylene at controlled 150ppm — clean and safe.',
+                'step-3-h': 'Uniform Ripening',
+                'step-3-p': 'Consistent, predictable results — zero residue on produce or in the chamber.',
+
+                /* SUPPLY */
+                'supply-tag': '03 — Global Distribution',
+                'supply-title': 'Seamless Global Supply.<br /><em>Integrated Excellence.</em>',
+                'supply-desc': 'Available direct through Al Awalawya Global Trading LLC and via our expanding worldwide distributor network.',
+                'sc-1-h': 'Secure Your Supply',
+                'sc-1-p': 'Purchase directly or through our expanding worldwide distributor network — reliable, consistent supply wherever you operate.',
+                'sc-2-h': 'Efficient Logistics',
+                'sc-2-p': 'Non-pressurized liquid concentrate simplifies international shipping — no hazardous freight complications or pressurized handling.',
+                'sc-3-h': 'Responsible Disposal',
+                'sc-3-p': 'Triple rinse containers before recycling or disposal. Refer to MSDS for complete safety and handling instructions.',
+                'sct-tag': 'Secure your export supply today',
+                'sct-h': 'Contact us for bulk export pricing<br /><em>and partnership opportunities.</em>',
+                'sct-det-1': 'AL AWALAWYA GLOBAL TRADING LLC — Made in Oman',
+                'sct-det-2': 'Plot 187, Industrial Zone, Barka Sanaya Phase 2, Al Batinah South',
+                'sct-det-3': '+968 9668 7703 · helpdesk@ripenol.com · www.ripenol.com',
+                'sb-sub': 'Made in Oman',
+                'sb-stamp': 'OMAN CERTIFIED',
+
+                /* CONTACT */
+                'contact-tag': '04 — Get In Touch',
+                'contact-title': 'Reach Us.<br /><em>Grow Together.</em>',
+                'contact-desc': 'Bulk export pricing, distributor partnerships, or product information — our team responds within 1–2 business days.',
+                'ir-1-h': 'Phone',
+                'ir-1-v': '+968 9668 7703',
+                'ir-2-h': 'Email',
+                'ir-2-v': 'helpdesk@ripenol.com',
+                'ir-3-h': 'Address',
+                'ir-3-v': 'Plot 187, Industrial Zone<br />Barka Sanaya Phase 2<br />Al Batinah South, Oman',
+                'ir-4-h': 'Company',
+                'ir-4-v': 'Al Awalawya Global Trading LLC',
+                'copy-btn': 'Copy Number',
+                'map-link': '↗ Open in Google Maps',
+                'form-tag': 'Send an Enquiry',
+                'f-name-lbl': 'Full Name',
+                'f-name-ph': 'Your name',
+                'f-co-lbl': 'Company',
+                'f-co-ph': 'Organisation',
+                'f-email-lbl': 'Email Address',
+                'f-email-ph': 'you@company.com',
+                'f-country-lbl': 'Country',
+                'f-country-ph': 'Origin country',
+                'f-msg-lbl': 'Message',
+                'f-msg-ph': 'Bulk pricing enquiry, distributor partnership…',
+                'form-note': 'Responses within 1–2 business days',
+                'form-submit': 'Send Enquiry →',
+                'success-h': 'Enquiry Sent',
+                'success-p': 'We\'ll be in touch within 1–2 business days.',
+
+                /* TRUST */
+                'trust-tag': 'Resources',
+                'trust-title': '<em>Download &amp;<br />Learn More.</em>',
+                'trust-desc': 'Full product brochure for your operations team, procurement department, or compliance review.',
+                'trust-btn-1': 'Download Brochure →',
+                'trust-btn-2': 'Email Us',
+                'tg-1': 'Made in Oman',
+                'tg-2': 'Zero Harmful Byproducts',
+                'tg-3': 'Global Safety Standards',
+                'tg-4': 'Worldwide Distribution',
+                'tg-5': 'Safe-Ripe™ Compatible',
+                'tg-6': 'Residue-Free Conversion',
+                'hazard-text': 'Contains Denatured Ethanol. Highly Flammable. Regulated by International and Local Guidelines. Keep away from ignition sources. For professional agricultural use only.',
+
+                /* FOOTER */
+                'footer-tagline': 'Pure Ethylene Conversion',
+                'footer-company': 'Al Awalawya Global Trading LLC',
+                'footer-nav-h': 'Navigate',
+                'footer-contact-h': 'Contact',
+                'footer-address-h': 'Address',
+                'footer-addr-1': 'Plot 187, Industrial Zone',
+                'footer-addr-2': 'Barka Sanaya Phase 2',
+                'footer-addr-3': 'Al Batinah South, Oman',
+                'footer-copy': '© 2026 Al Awalawya Global Trading LLC. All rights reserved.',
+                'oman-chip': 'Made in Oman',
+            },
+
+            ar: {
+                /* NAV */
+                'nav-purity': 'النقاء',
+                'nav-performance': 'الأداء',
+                'nav-supply': 'الإمداد',
+                'nav-contact': 'تواصل معنا',
+                'nav-cta': 'ابدأ الآن',
+
+                /* HERO */
+                'hero-eyebrow': 'صُنع في عُمان · تأسست ٢٠٢٤',
+                'hero-title': 'الوقود الأكثر<br />نقاءً لعملية<br /><em>إنضاج</em><br />دقيقة.',
+                'hero-desc': 'ريبينول™ مركّز إنضاج يحتوي على <strong>٩٠٪ إيثانول فعّال</strong>، مصمّم لتحويل نظيف وخالٍ من الرواسب إلى غاز الإيثيلين — دون أي نواتج ثانوية ضارة، في كل دفعة.',
+                'hero-btn-primary': 'أمّن إمداداتك ←',
+                'hero-btn-text': 'كيف يعمل ↓',
+                'hb-lbl-1': 'إيثانول فعّال',
+                'hb-lbl-2': 'إيثيلين / لتر',
+                'hb-lbl-3': 'نواتج ثانوية',
+
+                /* NUMBERS BAND */
+                'nb-lbl-1': 'نسبة الإيثانول الفعّال',
+                'nb-lbl-2': 'إيثيلين نقي لكل لتر',
+                'nb-lbl-3': 'تغطية الغرفة @ ١٥٠ جزء/مليون',
+                'nb-lbl-4': 'نواتج ثانوية ضارة',
+
+                /* PURITY */
+                'purity-tag': '٠١ — النقاء والسلامة',
+                'purity-title': 'نقاء <em>لا يُضاهى.</em><br />أمان لا يتزعزع.',
+                'purity-desc': 'ليست كل مركزات الإنضاج متساوية. فقد تم تركيب ريبينول™ بدقة لضمان تحويل دقيق ونظيف، مما يحمي محاصيلكم وعملياتكم.',
+                'good-badge': '✓ ريبينول™',
+                'good-h': 'تحويل نقي',
+                'good-p': 'يتحول الإيثانول المُصاغ خصيصاً إلى غاز الإيثيلين بشكل نظيف تام. لا رواسب، لا تلوث، لا نواتج ثانوية. محاصيلكم وموظفوكم محميون في كل دورة إنضاج.',
+                'good-pill': 'نظيف وآمن',
+                'bad-badge': '✗ سوائل غير معتمدة',
+                'bad-h': 'نواتج ثانوية ضارة',
+                'bad-p': 'قد تُتلف المولّد وتُنتج نواتج ثانوية سامة تضر بمحاصيلكم وعملياتكم. التكلفة دائماً أعلى مما تتوقع.',
+                'bad-pill': 'خطر على المحصول',
+                'comp-tag': 'تركيبة المنتج — ١٠٠٠ مل',
+                'comp-1-name': 'المادة الفعالة: إيثانول',
+                'comp-2-name': 'مكونات أخرى',
+                'comp-3-name': 'الإجمالي (١٠٠٠ مل)',
+                'warning-text': 'غير مخصص للاستهلاك البشري. يُحفظ بعيداً عن متناول الأطفال. استخدام أي سائل آخر <strong>قد يُتلف المولّد</strong> وقد <strong>ينتج عنه نواتج ثانوية ضارة</strong> تؤثر على المحصول. للاستخدام الزراعي المهني فقط.',
+
+                /* PERFORMANCE */
+                'perf-tag': '٠٢ — أداء مُثبت',
+                'perf-title': 'إنتاجية فائقة.<br /><em>جودة معتمدة.</em>',
+                'perf-desc': 'عزّز عائد استثمارك. يتحول لتر واحد إلى ٠٫٣١٤ م³ من الإيثيلين النقي — كافٍ لإنضاج حمولات متعددة لكل دورة.',
+                'bar-tag': 'مقارنة إنتاج الإيثيلين',
+                'bar-title': 'ريبينول™ مقابل المركزات العامة',
+                'bar-desc': 'إنتاج الإيثيلين لكل لتر — قياس المخرجات عند ١٥٠ جزء/مليون.',
+                'bar-lbl-gen': 'عام',
+                'bar-lbl-rip': 'ريبينول™',
+                'bar-val-gen': 'منخفض',
+                'formula': '٠٫٣١٤ م³ × ١٬٠٠٠٬٠٠٠ ÷ ١٥٠ = <strong>٢٬٠٩٣ م³ غرفة</strong>',
+                'sq-lbl-1': 'إيثيلين نقي / لتر',
+                'sq-lbl-2': 'غرفة @ ١٥٠ جزء/مليون',
+                'sq-lbl-3': 'الحجم المعادل',
+                'sq-lbl-4': 'تكلفة كل دورة',
+                'fruits-tag': 'تطبيقات متعددة',
+                'fruits-title': 'الفواكه والمحاصيل الذروية',
+                'steps-tag': 'طريقة الاستخدام',
+                'steps-title': 'ثلاث خطوات للإنضاج المثالي',
+                'step-1-h': 'صبّ ريبينول™',
+                'step-1-p': 'املأ خزان مولّد سيف-رايب™ بالحجم الصحيح لحجم غرفتك.',
+                'step-2-h': 'يحوّل المولّد',
+                'step-2-p': 'تحويل كيميائي حفّازي إلى إيثيلين نقي بتركيز ١٥٠ جزء/مليون — نظيف وآمن.',
+                'step-3-h': 'إنضاج متجانس',
+                'step-3-p': 'نتائج متسقة وقابلة للتنبؤ — لا رواسب على المحصول أو في الغرفة.',
+
+                /* SUPPLY */
+                'supply-tag': '٠٣ — التوزيع العالمي',
+                'supply-title': 'إمداد عالمي سلس.<br /><em>تميز متكامل.</em>',
+                'supply-desc': 'متاح للشراء مباشرة من شركة الاولوية العالمية للتجارة ش م م أو عبر شبكة موزعينا المتوسعة حول العالم.',
+                'sc-1-h': 'أمّن إمداداتك',
+                'sc-1-p': 'اشترِ مباشرة أو عبر شبكة موزعينا العالمية المتوسعة'
+            }
+        };
+
+        /* ── Add data-i18n attributes map — maps key to selector ── */
+        var I18N_MAP = [
+                    /* NAV */
+                    { key: 'nav-purity', sel: '.n-links a[href="#purity"]', prop: 'innerHTML' },
+                    { key: 'nav-performance', sel: '.n-links a[href="#performance"]', prop: 'innerHTML' },
+                    { key: 'nav-supply', sel: '.n-links a[href="#supply"]', prop: 'innerHTML' },
+                    { key: 'nav-contact', sel: '.n-links a[href="#contact"]', prop: 'innerHTML' },
+                    { key: 'nav-cta', sel: '.n-cta', prop: 'innerHTML' },
+                    { key: 'nav-purity', sel: '#mob-drawer .drawer-a[href="#purity"]', prop: 'innerHTML' },
+                    { key: 'nav-performance', sel: '#mob-drawer .drawer-a[href="#performance"]', prop: 'innerHTML' },
+                    { key: 'nav-supply', sel: '#mob-drawer .drawer-a[href="#supply"]', prop: 'innerHTML' },
+                    { key: 'nav-contact', sel: '#mob-drawer .drawer-a[href="#contact"]', prop: 'innerHTML' },
+
+                    /* HERO */
+                    { key: 'hero-eyebrow', sel: '.hero-kicker', prop: 'innerHTML' },
+                    { key: 'hero-title', sel: '.hero-h', prop: 'innerHTML' },
+                    { key: 'hero-desc', sel: '.hero-p', prop: 'innerHTML' },
+                    { key: 'hero-btn-primary', sel: '.hero-cta .btn-fill', prop: 'innerHTML' },
+                    { key: 'hero-btn-text', sel: '.hero-cta .btn-ghost', prop: 'innerHTML' },
+                    { key: 'hb-lbl-1', sel: '.hs:nth-child(1) .hs-l', prop: 'innerHTML' },
+                    { key: 'hb-lbl-2', sel: '.hs:nth-child(2) .hs-l', prop: 'innerHTML' },
+                    { key: 'hb-lbl-3', sel: '.hs:nth-child(3) .hs-l', prop: 'innerHTML' },
+                    { key: 'oman-chip', sel: '.oman-badge .ob-text', prop: 'innerHTML' },
+
+                    /* NUMBERS BAND */
+                    { key: 'nb-lbl-1', sel: '.stat-item:nth-child(1) .stat-lbl', prop: 'innerHTML' },
+                    { key: 'nb-lbl-2', sel: '.stat-item:nth-child(2) .stat-lbl', prop: 'innerHTML' },
+                    { key: 'nb-lbl-3', sel: '.stat-item:nth-child(3) .stat-lbl', prop: 'innerHTML' },
+                    { key: 'nb-lbl-4', sel: '.stat-item:nth-child(4) .stat-lbl', prop: 'innerHTML' },
+
+                    /* PURITY */
+                    { key: 'purity-tag', sel: '#purity .sec-tag', prop: 'innerHTML' },
+                    { key: 'purity-title', sel: '#purity .sec-h', prop: 'innerHTML' },
+                    { key: 'purity-desc', sel: '#purity .sec-p', prop: 'innerHTML' },
+                    { key: 'good-badge', sel: '.p-col:nth-child(1) .p-col-tag', prop: 'innerHTML' },
+                    { key: 'good-h', sel: '.p-col:nth-child(1) .p-col-h', prop: 'innerHTML' },
+                    { key: 'good-p', sel: '.p-col:nth-child(1) .p-col-p', prop: 'innerHTML' },
+                    { key: 'bad-badge', sel: '.p-col:nth-child(2) .p-col-tag', prop: 'innerHTML' },
+                    { key: 'bad-h', sel: '.p-col:nth-child(2) .p-col-h', prop: 'innerHTML' },
+                    { key: 'bad-p', sel: '.p-col:nth-child(2) .p-col-p', prop: 'innerHTML' },
+                    { key: 'comp-1-name', sel: '#comp-box .comp-row:nth-child(1) .comp-label', prop: 'innerHTML' },
+                    { key: 'comp-2-name', sel: '#comp-box .comp-row:nth-child(2) .comp-label', prop: 'innerHTML' },
+                    { key: 'comp-3-name', sel: '#comp-box .comp-row:nth-child(3) .comp-label', prop: 'innerHTML' },
+                    { key: 'warning-text', sel: '.p-warn-text', prop: 'innerHTML' },
+
+                    /* PERFORMANCE */
+                    { key: 'perf-tag', sel: '#performance .sec-tag', prop: 'innerHTML' },
+                    { key: 'perf-title', sel: '#performance .sec-h', prop: 'innerHTML' },
+                    { key: 'perf-desc', sel: '#performance .sec-p', prop: 'innerHTML' },
+                    { key: 'bar-tag', sel: '#performance .box:first-child .box-title', prop: 'innerHTML' },
+                    { key: 'bar-desc', sel: '#performance .box:first-child .box-sub', prop: 'innerHTML' },
+                    { key: 'bar-lbl-gen', sel: '#performance .box:first-child .brow:nth-child(3) .bl', prop: 'innerHTML' },
+                    { key: 'bar-lbl-rip', sel: '#performance .box:first-child .brow:nth-child(4) .bl', prop: 'innerHTML' },
+                    { key: 'bar-val-gen', sel: '#performance .box:first-child .brow:nth-child(3) .bv', prop: 'innerHTML' },
+                    { key: 'formula', sel: '#performance .bar-eq', prop: 'innerHTML' },
+                    { key: 'fruits-tag', sel: '#performance .box:nth-child(1) .fruits-tag', prop: 'innerHTML' },
+                    { key: 'steps-tag', sel: '#performance .box:nth-child(2) .steps-tag', prop: 'innerHTML' },
+                    { key: 'step-1-h', sel: '.step-row:nth-child(2) .step-h', prop: 'innerHTML' },
+                    { key: 'step-1-p', sel: '.step-row:nth-child(2) .step-p', prop: 'innerHTML' },
+                    { key: 'step-2-h', sel: '.step-row:nth-child(3) .step-h', prop: 'innerHTML' },
+                    { key: 'step-2-p', sel: '.step-row:nth-child(3) .step-p', prop: 'innerHTML' },
+                    { key: 'step-3-h', sel: '.step-row:nth-child(4) .step-h', prop: 'innerHTML' },
+                    { key: 'step-3-p', sel: '.step-row:nth-child(4) .step-p', prop: 'innerHTML' },
+
+                    /* SUPPLY */
+                    { key: 'supply-tag', sel: '#supply .sec-tag', prop: 'innerHTML' },
+                    { key: 'supply-title', sel: '#supply .sec-h', prop: 'innerHTML' },
+                    { key: 'supply-desc', sel: '#supply .sec-p', prop: 'innerHTML' },
+                    { key: 'sc-1-h', sel: '.supply-cards .sc:nth-child(1) .sc-h', prop: 'innerHTML' },
+                    { key: 'sc-1-p', sel: '.supply-cards .sc:nth-child(1) .sc-p', prop: 'innerHTML' },
+                    { key: 'sc-2-h', sel: '.supply-cards .sc:nth-child(2) .sc-h', prop: 'innerHTML' },
+                    { key: 'sc-2-p', sel: '.supply-cards .sc:nth-child(2) .sc-p', prop: 'innerHTML' },
+                    { key: 'sc-3-h', sel: '.supply-cards .sc:nth-child(3) .sc-h', prop: 'innerHTML' },
+                    { key: 'sc-3-p', sel: '.supply-cards .sc:nth-child(3) .sc-p', prop: 'innerHTML' },
+                    { key: 'sct-tag', sel: '.supply-cta .sct-tag', prop: 'innerHTML' },
+                    { key: 'sct-h', sel: '.supply-cta .sct-h', prop: 'innerHTML' },
+                    { key: 'sct-det-1', sel: '.supply-cta .sct-det:nth-child(1)', prop: 'innerHTML' },
+                    { key: 'sct-det-2', sel: '.supply-cta .sct-det:nth-child(2)', prop: 'innerHTML' },
+                    { key: 'sct-det-3', sel: '.supply-cta .sct-det:nth-child(3)', prop: 'innerHTML' },
+                    { key: 'sb-sub', sel: '.sct-badge-sub', prop: 'innerHTML' },
+                    { key: 'sb-stamp', sel: '.sct-badge-stamp', prop: 'innerHTML' },
+
+                    /* CONTACT */
+                    { key: 'contact-tag', sel: '#contact .sec-tag', prop: 'innerHTML' },
+                    { key: 'contact-title', sel: '#contact .sec-h', prop: 'innerHTML' },
+                    { key: 'contact-desc', sel: '#contact .sec-p', prop: 'innerHTML' },
+                    { key: 'ir-1-h', sel: '.cr:nth-child(1) .cr-h', prop: 'innerHTML' },
+                    { key: 'ir-1-v', sel: '.cr:nth-child(1) .cr-v', prop: 'innerHTML' },
+                    { key: 'ir-2-h', sel: '.cr:nth-child(2) .cr-h', prop: 'innerHTML' },
+                    { key: 'ir-2-v', sel: '.cr:nth-child(2) .cr-v', prop: 'innerHTML' },
+                    { key: 'ir-3-h', sel: '.cr:nth-child(3) .cr-h', prop: 'innerHTML' },
+                    { key: 'ir-3-v', sel: '.cr:nth-child(3) .cr-v', prop: 'innerHTML' },
+                    { key: 'ir-4-h', sel: '.cr:nth-child(4) .cr-h', prop: 'innerHTML' },
+                    { key: 'ir-4-v', sel: '.cr:nth-child(4) .cr-v', prop: 'innerHTML' },
+                    { key: 'copy-btn', sel: '#copy-btn', prop: 'innerHTML' },
+                    { key: 'map-link', sel: '.cmap-link', prop: 'innerHTML' },
+                    { key: 'form-tag', sel: '.cf-tag', prop: 'innerHTML' },
+                    { key: 'f-name-lbl', sel: '.cf-row:nth-child(2) .cf-ff:nth-child(1) .cf-lbl', prop: 'innerHTML' },
+                    { key: 'f-name-ph', sel: '#cf-name', prop: 'placeholder' },
+                    { key: 'f-co-lbl', sel: '.cf-row:nth-child(2) .cf-ff:nth-child(2) .cf-lbl', prop: 'innerHTML' },
+                    { key: 'f-co-ph', sel: '.cf-row:nth-child(2) .cf-ff:nth-child(2) .cf-inp', prop: 'placeholder' },
+                    { key: 'f-email-lbl', sel: '.cf-row:nth-child(3) .cf-ff:nth-child(1) .cf-lbl', prop: 'innerHTML' },
+                    { key: 'f-email-ph', sel: '#cf-email', prop: 'placeholder' },
+                    { key: 'f-country-lbl', sel: '.cf-row:nth-child(3) .cf-ff:nth-child(2) .cf-lbl', prop: 'innerHTML' },
+                    { key: 'f-country-ph', sel: '.cf-row:nth-child(3) .cf-ff:nth-child(2) .cf-inp', prop: 'placeholder' },
+                    { key: 'f-msg-lbl', sel: '.cf-row:nth-child(4) .cf-ff .cf-lbl', prop: 'innerHTML' },
+                    { key: 'f-msg-ph', sel: '#cf-msg', prop: 'placeholder' },
+                    { key: 'form-note', sel: '.cf-note', prop: 'innerHTML' },
+                    { key: 'form-submit', sel: '#cf-submit', prop: 'innerHTML' },
+                    { key: 'success-h', sel: '.cf-success-h', prop: 'innerHTML' },
+                    { key: 'success-p', sel: '.cf-success-p', prop: 'innerHTML' },
+
+                    /* TRUST */
+                    { key: 'trust-tag', sel: '#trust .sec-tag', prop: 'innerHTML' },
+                    { key: 'trust-title', sel: '#trust .sec-h', prop: 'innerHTML' },
+                    { key: 'trust-desc', sel: '#trust .sec-p', prop: 'innerHTML' },
+                    { key: 'tg-1', sel: '.trust-grid .ti:nth-child(1) .ti-text', prop: 'innerHTML' },
+                    { key: 'tg-2', sel: '.trust-grid .ti:nth-child(2) .ti-text', prop: 'innerHTML' },
+                    { key: 'tg-3', sel: '.trust-grid .ti:nth-child(3) .ti-text', prop: 'innerHTML' },
+                    { key: 'tg-4', sel: '.trust-grid .ti:nth-child(4) .ti-text', prop: 'innerHTML' },
+                    { key: 'tg-5', sel: '.trust-grid .ti:nth-child(5) .ti-text', prop: 'innerHTML' },
+                    { key: 'tg-6', sel: '.trust-grid .ti:nth-child(6) .ti-text', prop: 'innerHTML' },
+                    { key: 'hazard-text', sel: '.tw-text', prop: 'innerHTML' },
+
+                    /* FOOTER */
+                    { key: 'footer-tagline', sel: '.footer-tagline', prop: 'innerHTML' },
+                    { key: 'footer-nav-h', sel: '.footer-cols > div:nth-child(1) .footer-col-h', prop: 'innerHTML' },
+                    { key: 'footer-contact-h', sel: '.footer-cols > div:nth-child(2) .footer-col-h', prop: 'innerHTML' },
+                    { key: 'footer-address-h', sel: '.footer-cols > div:nth-child(3) .footer-col-h', prop: 'innerHTML' },
+                    { key: 'footer-addr-1', sel: '.footer-cols > div:nth-child(3) a:nth-child(1)', prop: 'innerHTML' },
+                    { key: 'footer-addr-2', sel: '.footer-cols > div:nth-child(3) a:nth-child(2)', prop: 'innerHTML' },
+                    { key: 'footer-addr-3', sel: '.footer-cols > div:nth-child(3) a:nth-child(3)', prop: 'innerHTML' },
+                    { key: 'footer-copy', sel: '.footer-copy', prop: 'innerHTML' },
+                ];
+
+                function applyLanguage(lang) {
+                    var t = TRANSLATIONS[lang];
+        if (!t) return;
+
+        // Set html lang and dir attribute
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        // Apply all text mappings
+        I18N_MAP.forEach(function (item) {
+            var el = document.querySelector(item.sel);
+            if (!el || !t[item.key]) return;
+            if (item.prop === 'placeholder') {
+                el.setAttribute('placeholder', t[item.key]);
+            } else {
+                el[item.prop] = t[item.key];
+            }
+        });
+
+        // Save preference
+        localStorage.setItem('ripenol-lang', lang);
+}
+
+        /* ── Init language toggle ── */
+        (function initLang() {
+            var btn = document.getElementById('lang-toggle');
+            var saved = localStorage.getItem('ripenol-lang') || 'en';
+            applyLanguage(saved);
+
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                var current = document.documentElement.getAttribute('lang') || 'en';
+                var next = current === 'en' ? 'ar' : 'en';
+                applyLanguage(next);
+            });
+        }());
+    </script>
+
+</body>
+
+</html>
